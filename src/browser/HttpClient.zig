@@ -928,6 +928,7 @@ pub const Request = struct {
     credentials: ?[:0]const u8 = null,
     notification: *Notification,
     max_response_size: ?usize = null,
+    timeout_ms: u32 = 0,
 
     // This is only relevant for intercepted requests. If a request is flagged
     // as blocking AND is intercepted, then it'll be up to us to wait until
@@ -1141,6 +1142,11 @@ pub const Transfer = struct {
         }
 
         try conn.setPrivate(self);
+
+        // Per-request timeout override (e.g. XHR timeout)
+        if (req.timeout_ms > 0) {
+            try conn.setTimeout(req.timeout_ms);
+        }
 
         // add credentials
         if (req.credentials) |creds| {
