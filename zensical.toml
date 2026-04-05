@@ -2,11 +2,13 @@
 site_name        = "Lightpanda Browser"
 site_url         = "https://atharkharal.github.io/browser/"
 site_description = "Developer documentation for Lightpanda — the headless browser built for AI agents, automation, and scraping."
-site_author      = "Lightpanda"
-copyright        = "&copy; 2025 Lightpanda (Selecy SAS)"
+site_author      = "Athar Kharal, PhD"
+copyright        = "&copy; 2025 <a href=\"https://www.linkedin.com/in/atharkharal/\" target=\"_blank\" style=\"color: var(--md-typeset-a-color); text-decoration: underline;\">Athar Kharal, PhD</a> | Lightpanda (Selecy SAS)"
 repo_url         = "https://github.com/lightpanda-io/browser"
 repo_name        = "lightpanda-io/browser"
 edit_uri          = "edit/main/docs/"
+extra_javascript = ["assets/custom.js"]
+extra_css        = ["assets/custom.css"]
 
 nav = [
   {"Home" = "index.md"},
@@ -72,6 +74,9 @@ property = "G-XXXXXXXXXX"
 [project.markdown_extensions.admonition]
 [project.markdown_extensions.pymdownx.details]
 [project.markdown_extensions.pymdownx.superfences]
+  custom_fences = [
+    { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" }
+  ]
 [project.markdown_extensions.pymdownx.highlight]
   anchor_linenums = true
 [project.markdown_extensions.pymdownx.tabbed]
