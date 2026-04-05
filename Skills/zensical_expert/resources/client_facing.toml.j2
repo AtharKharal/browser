@@ -1,0 +1,67 @@
+[project]
+site_name        = "{{ site_name | default('Product Documentation') }}"
+site_url         = "{{ site_url | default('https://docs.yourproduct.com/') }}"
+site_description = "{{ site_description | default('Official documentation for [Product Name]') }}"
+site_author      = "{{ site_author | default('Your Organisation') }}"
+copyright        = "&copy; {{ copyright_year | default('2025') }} {{ copyright_holder | default('Your Organisation') }}"
+repo_url         = "{{ repo_url | default('https://github.com/org/repo') }}"
+repo_name        = "{{ repo_name | default('org/repo') }}"
+edit_uri          = "edit/main/docs/"
+
+[project.theme]
+variant = "modern"
+features = [
+    "navigation.instant",
+    "navigation.instant.prefetch",
+    "navigation.instant.progress",
+    "navigation.tracking",
+    "navigation.tabs",
+    "navigation.tabs.sticky",
+    "navigation.sections",
+    "navigation.indexes",
+    "navigation.path",
+    "navigation.top",
+    "toc.follow",
+    "search.suggest",
+    "search.highlight",
+    "content.code.copy",
+    "content.tabs.link",
+]
+# CRITICAL: palette entries MUST be single-line inline tables.
+# Multiline inline tables cause TOMLDecodeError (Invalid initial character for key part).
+palette = [
+    {scheme = "slate", primary = "deep purple", accent = "cyan", toggle = {icon = "material/brightness-4", name = "Switch to light mode"}},
+    {scheme = "default", primary = "deep purple", accent = "cyan", toggle = {icon = "material/brightness-7", name = "Switch to dark mode"}}
+]
+
+[project.theme.font]
+text = "Inter"
+code = "JetBrains Mono"
+
+[project.theme.analytics]
+provider = "google"
+property = "{{ analytics_property | default('G-XXXXXXXXXX') }}"
+
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.pymdownx.details]
+[project.markdown_extensions.pymdownx.superfences]
+[project.markdown_extensions.pymdownx.highlight]
+  anchor_linenums = true
+# NOTE: Do NOT include pymdownx.inlinehilite or pymdownx.keys —
+# these cause ValueError in Zensical v0.0.31+ (not enough values to unpack).
+[project.markdown_extensions.pymdownx.tabbed]
+  alternate_style = true
+[project.markdown_extensions.pymdownx.tasklist]
+  custom_checkbox = true
+[project.markdown_extensions.attr_list]
+# md_in_html is REQUIRED for <div class="grid cards"> card grids to render.
+[project.markdown_extensions.md_in_html]
+[project.markdown_extensions.def_list]
+[project.markdown_extensions.footnotes]
+[project.markdown_extensions.tables]
+[project.markdown_extensions.toc]
+  permalink = true
+[project.markdown_extensions.abbr]
+
+[project.plugins.search]
+[project.plugins.tags]

@@ -1,0 +1,23 @@
+# Generated build output — never commit to main branch
+site/
+
+# Cloned source repos tracked separately
+browser/
+
+# Python virtual environment
+venv/
+
+# Intermediate working files
+.tmp/
+
+# Environment credentials
+.env
+*.env
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Editor config
+.vscode/
+*.swp
