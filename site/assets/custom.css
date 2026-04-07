@@ -1,0 +1,42 @@
+/* Custom Header Branding */
+.custom-branding-header {
+    margin-left: auto;
+    margin-right: 1.25rem;
+    font-size: 0.65rem;
+    font-weight: 400;
+    color: var(--md-header-fg-color);
+    opacity: 0.85;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.custom-branding-header a {
+    color: var(--md-header-fg-color) !important;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 0.4rem;
+    transition: opacity 0.25s;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.custom-branding-header a:hover {
+    opacity: 1;
+    border-bottom: 1px solid white;
+}
+
+/* Footer Copyright Styling */
+.md-copyright a {
+    color: var(--md-typeset-a-color);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+/* Responsive: Hide header branding on mobile/tablet */
+@media screen and (max-width: 63.9375em) {
+    .custom-branding-header {
+        display: none;
+    }
+}

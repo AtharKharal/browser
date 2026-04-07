@@ -1,0 +1,2247 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Complete reference for all Lightpanda CLI commands, flags, and defaults. Sourced from Config.zig.">
+      
+      
+        <meta name="author" content="Athar Kharal, PhD">
+      
+      
+        <link rel="canonical" href="https://atharkharal.github.io/browser/reference/cli-reference/">
+      
+      
+        <link rel="prev" href="../architecture/">
+      
+      
+        <link rel="next" href="../cdp-protocol/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/logo-lightpanda.png">
+      <meta name="generator" content="zensical-0.0.31">
+    
+    
+      
+        <title>CLI Reference — Lightpanda Browser - Lightpanda Browser</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.53a7feaf.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cli-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Lightpanda Browser" class="md-header__button md-logo" aria-label="Lightpanda Browser" data-md-component="logo">
+      
+  <img src="../../assets/logo-lightpanda.png" alt="Lightpanda Browser">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lightpanda Browser
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CLI Reference — Lightpanda Browser
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/lightpanda-io/browser" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lightpanda-io/browser
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tutorials/getting-started/" class="md-tabs__link">
+          
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../how-to/build-from-source/" class="md-tabs__link">
+          
+  
+  How-To Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../architecture/" class="md-tabs__link">
+          
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../explanation/design-philosophy/" class="md-tabs__link">
+          
+  
+  Explanation
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Lightpanda Browser" class="md-nav__button md-logo" aria-label="Lightpanda Browser" data-md-component="logo">
+      
+  <img src="../../assets/logo-lightpanda.png" alt="Lightpanda Browser">
+
+    </a>
+    Lightpanda Browser
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/lightpanda-io/browser" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    lightpanda-io/browser
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/puppeteer-walkthrough/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Puppeteer Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/playwright-walkthrough/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playwright Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    How-To Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/build-from-source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build from Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/docker-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/network-interception/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Interception
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/proxy-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proxy Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/disable-telemetry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disable Telemetry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#command-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Command Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fetch-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fetch Command
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="fetch Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flags-output-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flags — Output Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flags-wait-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flags — Wait Conditions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dump-format-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dump Format Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serve-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        serve Command
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="serve Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flags-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flags — Network
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flags-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flags — Connections
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mcp-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mcp Command
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Flags
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Flags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-bot-authentication-ed25519" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Bot Authentication (Ed25519)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-scopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Log Scopes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exit-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exit Codes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cdp-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CDP Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-api-coverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web API Coverage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explanation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Explanation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explanation/design-philosophy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Philosophy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explanation/javascript-engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaScript Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../explanation/memory-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#command-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Command Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fetch-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fetch Command
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="fetch Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flags-output-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flags — Output Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flags-wait-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flags — Wait Conditions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dump-format-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dump Format Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serve-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        serve Command
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="serve Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flags-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flags — Network
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flags-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flags — Connections
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mcp-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mcp Command
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Flags
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Flags">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-bot-authentication-ed25519" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Bot Authentication (Ed25519)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-scopes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Log Scopes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exit-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exit Codes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../architecture/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Reference
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+
+
+<h1 id="cli-reference">CLI Reference<a class="headerlink" href="#cli-reference" title="Permanent link">&para;</a></h1>
+<p>All CLI flags documented here are extracted directly from <code>src/Config.zig</code>. Defaults are drawn from the <code>Common</code>, <code>Serve</code>, <code>Fetch</code>, and <code>Mcp</code> struct definitions.</p>
+<hr />
+<h2 id="command-overview">Command Overview<a class="headerlink" href="#command-overview" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>lightpanda &lt;command&gt; [flags]
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fetch &lt;URL&gt;</code></td>
+<td>Evaluate a URL and dump output to stdout. No persistence.</td>
+</tr>
+<tr>
+<td><code>serve</code></td>
+<td>Start a persistent WebSocket CDP server for Puppeteer/Playwright.</td>
+</tr>
+<tr>
+<td><code>mcp</code></td>
+<td>Start a Model Context Protocol server over stdio.</td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td>Print the build version.</td>
+</tr>
+<tr>
+<td><code>help</code></td>
+<td>Display usage information.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="fetch-command"><code>fetch</code> Command<a class="headerlink" href="#fetch-command" title="Permanent link">&para;</a></h2>
+<p>Single-shot page evaluation. Downloads the URL, executes JavaScript, and emits the rendered output.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>lightpanda<span class="w"> </span>fetch<span class="w"> </span><span class="o">[</span>flags<span class="o">]</span><span class="w"> </span>&lt;URL&gt;
+</code></pre></div>
+<h3 id="flags-output-control">Flags — Output Control<a class="headerlink" href="#flags-output-control" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--dump &lt;format&gt;</code></td>
+<td>string</td>
+<td>none</td>
+<td>Dump document to stdout. Values: <code>html</code>, <code>markdown</code>, <code>semantic_tree</code>, <code>semantic_tree_text</code>. Omitting prints nothing.</td>
+</tr>
+<tr>
+<td><code>--strip-mode &lt;list&gt;</code></td>
+<td>string</td>
+<td>none</td>
+<td>Comma-separated groups to strip from dump. Values: <code>js</code>, <code>ui</code>, <code>css</code>, <code>full</code>.</td>
+</tr>
+<tr>
+<td><code>--with-base</code></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Inject a <code>&lt;base&gt;</code> tag into the dump reflecting the original URL.</td>
+</tr>
+<tr>
+<td><code>--with-frames</code></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Include iframe content in the dump output.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flags-wait-conditions">Flags — Wait Conditions<a class="headerlink" href="#flags-wait-conditions" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Wait flag precedence</p>
+<p><code>--wait-ms</code> overrides all other wait parameters when specified. <code>--wait-until</code> is checked first, then <code>--wait-selector</code>/<code>--wait-script</code> after that condition is met.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--wait-ms &lt;ms&gt;</code></td>
+<td>uint32</td>
+<td><code>5000</code></td>
+<td>Fixed wait duration in milliseconds after page load. Overrides all other wait flags.</td>
+</tr>
+<tr>
+<td><code>--wait-until &lt;event&gt;</code></td>
+<td>string</td>
+<td><code>done</code></td>
+<td>Wait for a lifecycle event. One of: <code>load</code>, <code>domcontentloaded</code>, <code>networkidle</code>, <code>done</code>.</td>
+</tr>
+<tr>
+<td><code>--wait-selector &lt;css&gt;</code></td>
+<td>string</td>
+<td>none</td>
+<td>Wait for an element matching this CSS selector to appear in the DOM.</td>
+</tr>
+<tr>
+<td><code>--wait-script &lt;js&gt;</code></td>
+<td>string</td>
+<td>none</td>
+<td>Wait until this JavaScript expression returns truthy.</td>
+</tr>
+<tr>
+<td><code>--wait-script-file &lt;path&gt;</code></td>
+<td>string</td>
+<td>none</td>
+<td>Same as <code>--wait-script</code> but reads from a file.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dump-format-reference">Dump Format Reference<a class="headerlink" href="#dump-format-reference" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>html</code></td>
+<td>Rendered HTML (post-JavaScript evaluation)</td>
+</tr>
+<tr>
+<td><code>markdown</code></td>
+<td>Simplified Markdown-compatible text extraction</td>
+</tr>
+<tr>
+<td><code>semantic_tree</code></td>
+<td>Structured semantic DOM representation</td>
+</tr>
+<tr>
+<td><code>semantic_tree_text</code></td>
+<td>Text-only semantic tree (no markup)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="serve-command"><code>serve</code> Command<a class="headerlink" href="#serve-command" title="Permanent link">&para;</a></h2>
+<p>Starts the persistent Chrome DevTools Protocol WebSocket server.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>lightpanda<span class="w"> </span>serve<span class="w"> </span><span class="o">[</span>flags<span class="o">]</span>
+</code></pre></div>
+<h3 id="flags-network">Flags — Network<a class="headerlink" href="#flags-network" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--host &lt;addr&gt;</code></td>
+<td>string</td>
+<td><code>127.0.0.1</code></td>
+<td>IP address to bind the CDP server. Use <code>0.0.0.0</code> to accept external connections.</td>
+</tr>
+<tr>
+<td><code>--port &lt;n&gt;</code></td>
+<td>uint16</td>
+<td><code>9222</code></td>
+<td>TCP port for the CDP WebSocket listener.</td>
+</tr>
+<tr>
+<td><code>--advertise-host &lt;addr&gt;</code></td>
+<td>string</td>
+<td>value of <code>--host</code></td>
+<td>Advertised hostname in <code>/json/version</code> response. Useful when binding to <code>0.0.0.0</code> but need to advertise a specific address.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flags-connections">Flags — Connections<a class="headerlink" href="#flags-connections" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--timeout &lt;secs&gt;</code></td>
+<td>uint31</td>
+<td><code>10</code></td>
+<td>Inactivity timeout in seconds before disconnecting a CDP session. Maximum: <code>604800</code> (1 week).</td>
+</tr>
+<tr>
+<td><code>--cdp-max-connections &lt;n&gt;</code></td>
+<td>uint16</td>
+<td><code>16</code></td>
+<td>Maximum simultaneous active CDP sessions.</td>
+</tr>
+<tr>
+<td><code>--cdp-max-pending-connections &lt;n&gt;</code></td>
+<td>uint16</td>
+<td><code>128</code></td>
+<td>Backlog depth for the TCP accept queue.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="mcp-command"><code>mcp</code> Command<a class="headerlink" href="#mcp-command" title="Permanent link">&para;</a></h2>
+<p>Starts the Model Context Protocol server over standard input/output.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>lightpanda<span class="w"> </span>mcp<span class="w"> </span><span class="o">[</span>flags<span class="o">]</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--version &lt;ver&gt;</code></td>
+<td>string</td>
+<td><code>2024-11-05</code></td>
+<td>Override the MCP protocol version. Valid: <code>2024-11-05</code>, <code>2025-03-26</code>, <code>2025-06-18</code>, <code>2025-11-25</code>.</td>
+</tr>
+<tr>
+<td><code>--cdp-port &lt;n&gt;</code></td>
+<td>uint16</td>
+<td>none</td>
+<td>Optionally start a bundled CDP server on this port alongside the MCP stdio server.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="common-flags">Common Flags<a class="headerlink" href="#common-flags" title="Permanent link">&para;</a></h2>
+<p>These flags apply to <code>fetch</code>, <code>serve</code>, and <code>mcp</code> modes.</p>
+<h3 id="network-behavior">Network Behavior<a class="headerlink" href="#network-behavior" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--http-proxy &lt;url&gt;</code></td>
+<td>string</td>
+<td>none</td>
+<td>HTTP proxy for all outbound requests. Format: <code>http://user:pass@host:port</code>.</td>
+</tr>
+<tr>
+<td><code>--proxy-bearer-token &lt;token&gt;</code></td>
+<td>string</td>
+<td>none</td>
+<td>Proxy-Authorization Bearer token, sent as <code>Proxy-Authorization: Bearer &lt;token&gt;</code>.</td>
+</tr>
+<tr>
+<td><code>--http-max-concurrent &lt;n&gt;</code></td>
+<td>uint8</td>
+<td><code>10</code></td>
+<td>Maximum simultaneous HTTP requests across the browser instance.</td>
+</tr>
+<tr>
+<td><code>--http-max-host-open &lt;n&gt;</code></td>
+<td>uint8</td>
+<td><code>4</code></td>
+<td>Maximum open connections to any single host:port.</td>
+</tr>
+<tr>
+<td><code>--http-connect-timeout &lt;ms&gt;</code></td>
+<td>uint31</td>
+<td><code>0</code></td>
+<td>TCP connection establishment timeout in milliseconds. <code>0</code> = no limit.</td>
+</tr>
+<tr>
+<td><code>--http-timeout &lt;ms&gt;</code></td>
+<td>uint31</td>
+<td><code>10000</code></td>
+<td>Total transfer timeout in milliseconds per request. <code>0</code> = no limit.</td>
+</tr>
+<tr>
+<td><code>--http-max-response-size &lt;n&gt;</code></td>
+<td>usize</td>
+<td>none</td>
+<td>Maximum acceptable response body size in bytes. Applies to all request types (scripts, XHR, Fetch, HTML).</td>
+</tr>
+<tr>
+<td><code>--http-cache-dir &lt;path&gt;</code></td>
+<td>string</td>
+<td>none</td>
+<td>File system path to use as an HTTP response cache. Disabling caching degrades performance for repeat visits.</td>
+</tr>
+<tr>
+<td><code>--obey-robots</code></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Fetch and enforce <code>robots.txt</code> for all navigated domains.</td>
+</tr>
+<tr>
+<td><code>--insecure-disable-tls-host-verification</code></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Bypass TLS host certificate verification. High-risk flag. Should only be used in controlled test environments.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="user-agent">User Agent<a class="headerlink" href="#user-agent" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--user-agent-suffix &lt;text&gt;</code></td>
+<td>string</td>
+<td>none</td>
+<td>Text appended to the default <code>Lightpanda/1.0</code> User-Agent. Useful for rate-limit negotiation or bot authentication.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="web-bot-authentication-ed25519">Web Bot Authentication (Ed25519)<a class="headerlink" href="#web-bot-authentication-ed25519" title="Permanent link">&para;</a></h3>
+<p>These flags enable structured HTTP request signing for bot-permissive server frameworks.</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--web-bot-auth-key-file &lt;path&gt;</code></td>
+<td>string</td>
+<td>none</td>
+<td>Path to an Ed25519 private key PEM file.</td>
+</tr>
+<tr>
+<td><code>--web-bot-auth-keyid &lt;id&gt;</code></td>
+<td>string</td>
+<td>none</td>
+<td>The JWK thumbprint of the public key.</td>
+</tr>
+<tr>
+<td><code>--web-bot-auth-domain &lt;domain&gt;</code></td>
+<td>string</td>
+<td>none</td>
+<td>Your domain (e.g., <code>your-company.com</code>).</td>
+</tr>
+</tbody>
+</table>
+<p>All three <code>--web-bot-auth-*</code> flags must be provided together or none will take effect.</p>
+<h3 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Values</th>
+<th>Default (Debug)</th>
+<th>Default (Release)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--log-level</code></td>
+<td><code>debug</code>, <code>info</code>, <code>warn</code>, <code>error</code>, <code>fatal</code></td>
+<td><code>info</code></td>
+<td><code>warn</code></td>
+</tr>
+<tr>
+<td><code>--log-format</code></td>
+<td><code>pretty</code>, <code>logfmt</code></td>
+<td><code>pretty</code></td>
+<td><code>logfmt</code></td>
+</tr>
+<tr>
+<td><code>--log-filter-scopes</code></td>
+<td>comma-separated scope names</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h4 id="log-scopes">Log Scopes<a class="headerlink" href="#log-scopes" title="Permanent link">&para;</a></h4>
+<p>Scopes allow filtering verbose log categories in production. Common values:
+<code>http</code>, <code>unknown_prop</code>, <code>event</code>, <code>app</code>, <code>mcp</code>, <code>browser</code>, <code>telemetry</code>.</p>
+<p>Example — suppress XHR noise while retaining app-level logs:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>lightpanda<span class="w"> </span>serve<span class="w"> </span>--log-filter-scopes<span class="w"> </span>http
+</code></pre></div></p>
+<hr />
+<h2 id="environment-variables">Environment Variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LIGHTPANDA_DISABLE_TELEMETRY=true</code></td>
+<td>Disables all telemetry collection and transmission.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="exit-codes">Exit Codes<a class="headerlink" href="#exit-codes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td>Success</td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td>Fatal error — check stderr for details</td>
+</tr>
+</tbody>
+</table>
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">Reference</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">CLI</span>
+      
+    
+  </nav>
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2025 <a href="https://www.linkedin.com/in/atharkharal/" target="_blank" style="color: var(--md-typeset-a-color); text-decoration: underline;">Athar Kharal, PhD</a> | Lightpanda (Selecy SAS)
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.instant","navigation.instant.prefetch","navigation.instant.progress","navigation.tracking","navigation.tabs","navigation.tabs.sticky","navigation.sections","navigation.indexes","navigation.path","navigation.top","toc.follow","search.suggest","search.highlight","content.code.copy","content.tabs.link"],"search":"../../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.91a19a9e.min.js"></script>
+      
+        <script src="../../assets/custom.js"></script>
+      
+    
+  </body>
+</html>

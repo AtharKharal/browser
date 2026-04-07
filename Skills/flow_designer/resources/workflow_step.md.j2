@@ -1,0 +1,20 @@
+## Step {{ step.number }}: {{ step.title }}
+
+{{ step.narrative }}
+
+{% if step.code %}
+```{{ step.language | default('bash') }}
+{{ step.code }}
+```
+{% endif %}
+
+{% if step.diagram %}
+```mermaid
+{{ step.diagram }}
+```
+{% endif %}
+
+{% if step.recipe %}
+> [!TIP]
+> **Recipe**: {{ step.recipe }}
+{% endif %}

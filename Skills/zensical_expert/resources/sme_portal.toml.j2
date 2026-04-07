@@ -1,0 +1,97 @@
+[project]
+site_name        = "{{ site_name | default('PORTAL NAME — Knowledge Base') }}"
+site_url         = "{{ site_url | default('https://your-domain.com/') }}"
+site_description = "{{ site_description | default('Internal knowledge portal for [Team/Organisation]') }}"
+site_author      = "{{ site_author | default('Aria Webworks') }}"
+copyright        = "&copy; {{ copyright_year | default('2025') }} {{ copyright_holder | default('[Organisation Name]') }}"
+docs_dir         = "docs"
+site_dir         = "site"
+
+# --- Theme ---
+[project.theme]
+variant = "modern"
+features = [
+    "navigation.instant",
+    "navigation.instant.prefetch",
+    "navigation.instant.progress",
+    "navigation.tabs",
+    "navigation.tabs.sticky",
+    "navigation.sections",
+    "navigation.indexes",
+    "navigation.path",
+    "navigation.top",
+    "toc.follow",
+    "search.suggest",
+    "search.highlight",
+    "content.code.copy",
+    "content.tabs.link",
+]
+palette = [
+    {scheme = "default", primary = "indigo", accent = "indigo",
+     toggle = {icon = "material/brightness-7", name = "Switch to dark mode"}},
+    {scheme = "slate",   primary = "indigo", accent = "indigo",
+     toggle = {icon = "material/brightness-4", name = "Switch to light mode"}}
+]
+
+[project.theme.font]
+text = "Roboto"
+code = "Roboto Mono"
+
+# --- Navigation ---
+[project]
+nav = [
+    {"Home" = "index.md"},
+    {"Getting Started" = [
+        "getting-started/index.md",
+        {"Installation"    = "getting-started/installation.md"},
+        {"Configuration"   = "getting-started/configuration.md"},
+        {"Quick Reference" = "getting-started/quick-reference.md"},
+    ]},
+    {"Guides" = [
+        "guides/index.md",
+        {"Guide One" = "guides/guide-one.md"},
+        {"Guide Two" = "guides/guide-two.md"},
+    ]},
+    {"Reference" = [
+        "reference/index.md",
+        {"API"        = "reference/api.md"},
+        {"Glossary"   = "reference/glossary.md"},
+    ]},
+    {"Community" = [
+        {"Contributing" = "community/contributing.md"},
+        {"FAQ"          = "community/faq.md"},
+    ]}
+]
+
+# --- Markdown Extensions ---
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.pymdownx.details]
+[project.markdown_extensions.pymdownx.superfences]
+[project.markdown_extensions.pymdownx.highlight]
+  anchor_linenums = true
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.tabbed]
+  alternate_style = true
+[project.markdown_extensions.pymdownx.tasklist]
+  custom_checkbox = true
+[project.markdown_extensions.pymdownx.emoji]
+  emoji_index     = "material"
+  emoji_generator = "material"
+[project.markdown_extensions.pymdownx.keys]
+[project.markdown_extensions.attr_list]
+[project.markdown_extensions.def_list]
+[project.markdown_extensions.footnotes]
+[project.markdown_extensions.tables]
+[project.markdown_extensions.toc]
+  permalink = true
+[project.markdown_extensions.abbr]
+[project.markdown_extensions.pymdownx.snippets]
+  auto_append = ["docs/abbreviations.md"]
+
+# --- Plugins ---
+[project.plugins.search]
+[project.plugins.tags]
+
+# --- Extra CSS (optional width override) ---
+[project]
+extra_css = ["stylesheets/extra.css"]
