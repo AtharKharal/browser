@@ -41,6 +41,8 @@ nav = [
 
 [project.theme]
 variant = "modern"
+logo = "assets/logo-lightpanda.png"
+favicon = "assets/logo-lightpanda.png"
 features = [
     "navigation.instant",
     "navigation.instant.prefetch",

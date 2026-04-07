@@ -17,6 +17,8 @@ venv/
 # OS noise
 .DS_Store
 Thumbs.db
+Skills/
+agents.md
 
 # Editor config
 .vscode/
