@@ -30,9 +30,9 @@ hide:
 
     Not a Chromium fork. No graphical rendering pipeline. Written from scratch in Zig to eliminate overhead that does not serve automation workloads.
 
-- **MCP Server Built-In**
+- **MCP & LSP Server Built-In**
 
-    Exposes a Model Context Protocol (MCP) server over stdio, enabling native integration with AI agent toolchains.
+    Exposes both **Model Context Protocol (MCP)** over stdio for AI agent integration AND **Language Server Protocol (LSP)** over stdio for IDE integration with CDP and MCP method completions.
 
 </div>
 

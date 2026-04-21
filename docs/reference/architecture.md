@@ -203,6 +203,28 @@ The MCP server can optionally start an embedded CDP server on a configurable por
 
 ---
 
+## LSP Integration (`src/lsp/`)
+
+The `lsp` command starts a JSON-RPC 2.0 server over `stdio` conforming to the Language Server Protocol. This provides IDE integration with CDP and MCP method completions:
+
+| Capability | Description |
+|---|---|
+| `textDocument/completion` | Auto-complete for MCP tools and CDP methods |
+| `textDocument/hover` | Hover documentation for methods |
+| `textDocument/definition` | Go-to definition support |
+| `textDocument/references` | Find references |
+| `workspace/symbol` | Search symbols across CDP domains and MCP tools |
+| `textDocument/documentSymbol` | Document symbol providers |
+
+### Available Completions
+
+The LSP server provides completions for:
+- **MCP Tools**: goto, navigate, markdown, links, evaluate, eval, semantic_tree, nodeDetails, interactiveElements, structuredData, detectForms, click, fill, scroll, waitForSelector, hover, press, selectOption, setChecked, findElement
+- **CDP Domains**: Page, Runtime, DOM, Network, Target, Input, Emulation, Fetch, Storage, Security, Log, Inspector, Accessibility, CSS, Performance
+- **CDP Methods**: Page.navigate, Page.captureScreenshot, Runtime.evaluate, DOM.getDocument, DOM.querySelector, Network.requestWillBeSent, Target.createTarget, Input.dispatchMouseEvent, Emulation.setDeviceMetricsOverride
+
+---
+
 ## Implemented CDP Domains
 
 | Domain | File | Status |
