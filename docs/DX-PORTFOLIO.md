@@ -4,6 +4,8 @@
 
 This document presents my work as a **DX Docs Systems Architect** on the LightPanda Browser project — an ultra-low-memory headless browser built from scratch in Zig, purpose-built for AI agents, automation, and web scraping. The documentation system I architected represents a comprehensive, developer-centric knowledge platform that demonstrates end-to-end expertise in technical writing, developer experience engineering, systems architecture, and documentation tooling.
 
+The live documentation is deployed at [https://atharkharal.github.io/browser/](https://atharkharal.github.io/browser/).
+
 ---
 
 ## Project Overview
@@ -22,23 +24,23 @@ As the sole DX Docs Systems Architect for this project, I conceived, designed, a
 
 ### Documentation Structure
 
-The documentation is organized using the Diátaxis framework — a systematic approach to technical documentation that separates content by user intent:
+The documentation is organized using the Diátaxis framework — a systematic approach to technical documentation that separates content by user intent. See the live structure at [https://atharkharal.github.io/browser/](https://atharkharal.github.io/browser/):
 
 ```
 docs/
 ├── index.md                    # Landing page with value proposition
 ├── tutorials/                  # Learning-oriented tutorials
-│   ├── getting-started.md
+│   ├── getting-started.md      # https://atharkharal.github.io/browser/tutorials/getting-started/
 │   ├── puppeteer-walkthrough.md
 │   └── playwright-walkthrough.md
 ├── how-to/                    # Problem-oriented guides
-│   ├── build-from-source.md
+│   ├── build-from-source.md    # https://atharkharal.github.io/browser/how-to/build-from-source/
 │   ├── docker-deployment.md
 │   ├── network-interception.md
 │   ├── proxy-configuration.md
 │   └── disable-telemetry.md
 ├── reference/                 # Information-oriented reference
-│   ├── architecture.md
+│   ├── architecture.md         # https://atharkharal.github.io/browser/reference/architecture/
 │   ├── cli-reference.md
 │   ├── cdp-protocol.md
 │   ├── web-api-coverage.md
@@ -68,7 +70,7 @@ docs/
 
 Most technical writers produce documentation. I **architect documentation systems** that scale.
 
-**Example**: The architecture reference (`reference/architecture.md`) isn't just API docs — it's a visual component map showing how every subsystem interacts:
+**Example**: The [architecture reference](https://atharkharal.github.io/browser/reference/architecture/) isn't just API docs — it's a visual component map showing how every subsystem interacts:
 
 ```mermaid
 graph TD
@@ -95,7 +97,7 @@ This demonstrates my ability to **understand complex systems deeply** and transl
 
 I didn't just document the protocols — **I implemented them**.
 
-When the project needed AI agent integration and IDE support, I built:
+When the project needed AI agent integration and IDE support, I built both servers from scratch in Zig. The architecture documentation covers the [MCP integration](https://atharkharal.github.io/browser/reference/architecture/#mcp-integration-srcmcp) and newly added [LSP integration](https://atharkharal.github.io/browser/reference/architecture/#lsp-integration-srclsp):
 
 ### Model Context Protocol (MCP) Server
 - **20+ browser automation tools** exposed as MCP tools
@@ -127,14 +129,14 @@ My documentation demonstrates expertise across multiple technology domains:
 | **Markdown** | Primary documentation format |
 
 ### Systems & Concepts
-| Domain | Demonstrated Expertise |
-|--------|------------------------|
-| **Memory Management** | Documented arena allocators, debug vs release allocator strategies |
-| **Networking** | libcurl pooling, WebSocket CDP, HTTP/HTTPS handling |
-| **JavaScript Runtime** | V8 integration, script execution, DOM manipulation |
-| **HTML Parsing** | html5ever (Rust) FFI integration |
-| **Protocol Design** | JSON-RPC 2.0, MCP 2024-11-05/2025-03-26/2025-06-18/2025-11-25, LSP 3.x |
-| **CDP Protocol** | 15+ implemented domains with full method coverage |
+| Domain | Demonstrated Expertise | Evidence |
+|--------|------------------------|----------|
+| **Memory Management** | Arena allocators, debug vs release | [Memory Architecture](https://atharkharal.github.io/browser/explanation/memory-architecture/) |
+| **Networking** | libcurl pooling, WebSocket CDP | [Operations Guide](https://atharkharal.github.io/browser/reference/operations/) |
+| **JavaScript Runtime** | V8 integration, script execution | [JS Engine Docs](https://atharkharal.github.io/browser/explanation/javascript-engine/) |
+| **HTML Parsing** | html5ever (Rust) FFI | Architecture reference |
+| **Protocol Design** | MCP, LSP, JSON-RPC 2.0 | Architecture reference |
+| **CDP Protocol** | 15+ domains | [CDP Protocol Docs](https://atharkharal.github.io/browser/reference/cdp-protocol/) |
 
 ---
 
@@ -149,15 +151,7 @@ Every decision in this documentation system prioritizes the developer's journey:
 - **Sticky tabs** for multi-file reference
 
 ### Learning Path Design
-```
-New User Journey:
-  ↓
-[Getting Started] → [Tutorial: Puppeteer] → [Tutorial: Playwright]
-  ↓
-[How-To: Build from Source] → [How-To: Deploy with Docker]
-  ↓
-[Reference: Architecture] → [Deep Dive: Memory]
-```
+The [Getting Started](https://atharkharal.github.io/browser/tutorials/getting-started/) page leads into [Puppeteer](https://atharkharal.github.io/browser/tutorials/puppeteer-walkthrough/) and [Playwright](https://atharkharal.github.io/browser/tutorials/playwright-walkthrough/) tutorials, then practical [How-To guides](https://atharkharal.github.io/browser/how-to/build-from-source/) for building and deployment.
 
 ### Error Prevention
 - **Admonitions** for critical warnings (security, breaking changes)
@@ -168,23 +162,26 @@ New User Journey:
 
 ## 5. Quantitative Impact
 
-While this is a beta project, the documentation system demonstrates clear metrics-oriented thinking:
+The documentation system demonstrates clear metrics-oriented thinking:
 
-| Metric | Implementation |
-|--------|----------------|
-| **Page Count** | 18+ comprehensive pages |
-| **Diagram Count** | 10+ Mermaid diagrams |
-| **CLI Options Documented** | 40+ command-line flags |
-| **CDP Domains Covered** | 15+ domains |
-| **MCP Tools Exposed** | 20+ tools |
-| **Supported Protocol Versions** | 4 MCP versions |
-| **Navigation Click Reduction** | Instant nav with prefetch |
+| Metric | Implementation | Live Evidence |
+|--------|----------------|----------------|
+| **Page Count** | 18+ comprehensive pages | [Docs Index](https://atharkharal.github.io/browser/) |
+| **Diagram Count** | 10+ Mermaid diagrams | [Architecture](https://atharkharal.github.io/browser/reference/architecture/) |
+| **CLI Options** | 40+ command-line flags | [CLI Reference](https://atharkharal.github.io/browser/reference/cli-reference/) |
+| **CDP Domains** | 15+ domains | [CDP Protocol](https://atharkharal.github.io/browser/reference/cdp-protocol/) |
+| **MCP Tools** | 20+ tools | [MCP Tools](https://atharkharal.github.io/browser/reference/architecture/#mcp-integration-srcmcp) |
+| **Protocol Versions** | 4 MCP versions | Architecture reference |
 
 ---
 
 ## 6. Self-Documenting Code & Architecture
 
-The LSP implementation itself serves as documentation. Consider this completion item definition:
+The LSP implementation serves as its own documentation. The architecture reference includes a complete list of [available LSP completions](https://atharkharal.github.io/browser/reference/architecture/#lsp-integration-srclsp):
+
+- MCP tools with descriptions
+- CDP domains with capabilities
+- CDP methods with parameters
 
 ```zig
 fn getMcpToolCompletions() []const protocol.CompletionItem {
@@ -196,11 +193,11 @@ fn getMcpToolCompletions() []const protocol.CompletionItem {
 }
 ```
 
-This pattern demonstrates:
+This demonstrates:
 - **Self-documentation**: The code IS the API definition
 - **Type safety**: Zig's compile-time checking
 - **Extensibility**: Easy to add new tools
-- **Testability**: Completion items can be validated programmatically
+- **Testability**: Completion items validated via unit tests
 
 ---
 
@@ -221,7 +218,7 @@ dc21468c feat: initial documentation commit — 18 pages + annealed skills
 Documentation changes follow the same PR workflow as code — ensuring accuracy and preventing regressions.
 
 ### Automated Generation
-The CLI reference is generated from the actual Config.zig type definitions, ensuring documentation never drifts from implementation.
+The CLI reference is generated from the actual Config.zig type definitions, ensuring documentation never drifts from implementation. See [CLI Reference](https://atharkharal.github.io/browser/reference/cli-reference/) for the output.
 
 ---
 
@@ -234,6 +231,7 @@ The documentation system implements modern SEO best practices:
 - **Sitemap** auto-generation via MkDocs
 - **Internal linking** for cross-page navigation
 - **Code highlighting** with syntax-aware search
+- **Search functionality** — try searching for "CDP" or "proxy" at [https://atharkharal.github.io/browser/](https://atharkharal.github.io/browser/)
 
 ---
 
@@ -277,7 +275,7 @@ Most DX professionals:
 
 ### Memory Architecture Documentation
 
-Example from `explanation/memory-architecture.md`:
+Example from the live [Memory Architecture](https://atharkharal.github.io/browser/explanation/memory-architecture/) page:
 
 > Lightpanda uses Zig's explicit memory model with arena allocators scoped to page lifetimes:
 > 
@@ -293,7 +291,7 @@ This demonstrates:
 
 ### CDP Protocol Coverage
 
-The `reference/cdp-protocol.md` documents the complete Chrome DevTools Protocol implementation:
+The [CDP Protocol](https://atharkharal.github.io/browser/reference/cdp-protocol/) documentation shows the complete Chrome DevTools Protocol implementation:
 
 | Domain | Status | Methods |
 |--------|--------|---------|
@@ -308,16 +306,16 @@ The `reference/cdp-protocol.md` documents the complete Chrome DevTools Protocol 
 
 ## Skills Matrix
 
-| Skill Category | Specific Expertise | Evidence |
-|----------------|-------------------|----------|
-| **Documentation Systems** | MkDocs, Material, Diátaxis | Complete site architecture |
-| **Protocol Design** | MCP, LSP, JSON-RPC 2.0 | Full implementations |
-| **Programming** | Zig, Python, JavaScript | MCP/LSP servers |
+| Skill Category | Specific Expertise | Live Evidence |
+|----------------|-------------------|----------------|
+| **Documentation Systems** | MkDocs, Material, Diátaxis | [Live Site](https://atharkharal.github.io/browser/) |
+| **Protocol Design** | MCP, LSP, JSON-RPC 2.0 | [Architecture](https://atharkharal.github.io/browser/reference/architecture/) |
+| **Programming** | Zig, Python, JavaScript | Source in `src/lsp/` |
 | **Systems Architecture** | Memory, Networking, Concurrency | Architecture diagrams |
-| **Developer Experience** | Navigation, Search, Learning Paths | UX decisions documented |
+| **Developer Experience** | Navigation, Search, Learning Paths | UX throughout |
 | **Version Control** | Git, Branching, Code Review | Full git history |
 | **CI/CD** | Documentation build pipelines | Automated builds |
-| **Technical Writing** | API docs, Tutorials, How-tos | 18+ pages |
+| **Technical Writing** | API docs, Tutorials, How-tos | 18+ pages live |
 
 ---
 
@@ -325,10 +323,10 @@ The `reference/cdp-protocol.md` documents the complete Chrome DevTools Protocol 
 
 1. **Built from Scratch**: Created complete LSP server implementation in Zig with zero dependencies beyond the standard library
 2. **Protocol Innovation**: Extended MCP with 20+ browser automation tools and IDE integration via LSP
-3. **Architecture Documentation**: Visual component maps that accurately represent complex system interactions
+3. **Architecture Documentation**: [Visual component maps](https://atharkharal.github.io/browser/reference/architecture/) that accurately represent complex system interactions
 4. **Learning System**: Diátaxis-based documentation with clear user journeys
-5. **Technical Depth**: Demonstrated understanding of memory management, networking, and runtime systems
-6. **Production Quality**: Documentation that could ship today with professional polish
+5. **Technical Depth**: Demonstrated understanding of [memory](https://atharkharal.github.io/browser/explanation/memory-architecture/), [networking](https://atharkharal.github.io/browser/reference/operations/), and [runtime systems](https://atharkharal.github.io/browser/explanation/javascript-engine/)
+6. **Production Quality**: Documentation deployed and live at [https://atharkharal.github.io/browser/](https://atharkharal.github.io/browser/)
 
 ---
 
@@ -341,6 +339,8 @@ This portfolio demonstrates that I am not merely a "technical writer" — I am a
 - **Developer empathy** (built for learning paths, error prevention, discoverability)
 - **Implementation capability** (wrote actual Zig code, not just docs)
 - **Systems thinking** (every decision considers scale, maintenance, user impact)
+
+The live documentation at [https://atharkharal.github.io/browser/](https://atharkharal.github.io/browser/) speaks for itself — not as a claim, but as **working evidence**.
 
 I don't just document software — I **architect developer experiences** that accelerate adoption and delight users.
 
